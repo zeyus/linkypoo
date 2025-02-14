@@ -1,11 +1,15 @@
 <script lang="ts">
     import { A } from "flowbite-svelte";
-    import * as Icon from 'flowbite-svelte-icons';
+    import { IconSolid } from 'flowbite-svelte-icons';
+    import Youtube from 'flowbite-svelte-icons/YoutubeSolid.svelte';
+    import Github from 'flowbite-svelte-icons/GithubSolid.svelte';
+    import Envelope from 'flowbite-svelte-icons/EnvelopeSolid.svelte';
 	import type { Component } from "svelte";
         
     let { link }: { link: Props.Link } = $props();
-    const availableIcons = Object.keys(Icon);
-    const icons = Object.entries(Icon);
+    const iconComponents = { Youtube, Github, Envelope };
+    const availableIcons = Object.keys(iconComponents);
+    const icons = Object.entries(iconComponents);
 
     const iconIndex = "linkIcon" in link && typeof link.linkIcon !== "undefined" ? availableIcons.indexOf(link.linkIcon) : -1;
     const iconSolidIndex = "linkIcon" in link && typeof link.linkIcon !== "undefined" ? availableIcons.indexOf(link.linkIcon + "Solid") : -1;
@@ -22,7 +26,7 @@
             icon = icons[iconSolidIndex][1];
         }
     }
-    const IconComponent = Icon.IconSolid;
+
     const iconConfig: { size: "md" | "xs" | "sm" | "lg" | "xl" | undefined, color: string, ariaLabel: string } = {
         size: "lg",
         color: link.color || '#fff',
@@ -39,7 +43,7 @@
 
 <A href={link.linkAttrs.href || undefined} class="rounded-xl bg-slate-700 p-4 w-full flex flex-row items-center justify-center hover:bg-slate-600 shadow-2xl">
     {#if icon !== null}
-        <span class="mr-2 size-8"><IconComponent Icon={icon} {...iconConfig} /></span>
+        <span class="mr-2 size-8"><IconSolid Icon={icon} {...iconConfig} /></span>
     {/if}
     {#if iconSvg !== null}
         <span class="mr-2 size-8" style="color:{link.color || '#fff'}">{@html iconSvg}</span>
