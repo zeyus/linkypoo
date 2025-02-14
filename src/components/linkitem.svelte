@@ -1,6 +1,6 @@
 <script lang="ts">
     import { A } from "flowbite-svelte";
-    import { IconSolid } from 'flowbite-svelte-icons';
+    import IconSolid from 'flowbite-svelte-icons/IconSolid.svelte';
     import Youtube from 'flowbite-svelte-icons/YoutubeSolid.svelte';
     import Github from 'flowbite-svelte-icons/GithubSolid.svelte';
     import Envelope from 'flowbite-svelte-icons/EnvelopeSolid.svelte';
