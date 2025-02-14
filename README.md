@@ -26,11 +26,25 @@ pnpm i
 pnpm dev
 ```
 
+## Build
+
+```bash
+pnpm build
+```
+
+By default, the output will end up in the `build` directory, which you can then put anywhere that serves static files. It also uses the 404.html page as a fallback for SPA routing (although, this is literally a single page, so it's not really necessary, but it can be useful in some cases).
+
 ## Deployment
+
+To deploy to github pages, run:
 
 ```bash
 pnpm gh-pages
 ```
+
+This assumes you already have at least a github pages domain (e.g. `https://username.github.io/`), or have a custom domain set up, in which case you will need to put that domain in the `static/CNAME` file.
+
+One note regarding github pages, if you deploy this to a subdirectory (e.g. `https://username.github.io/linkypoo/`), you will need to edit the `paths.base` config in `svelte.config.js` to reflect that (e.g. `base = '/linkypoo'`).
 
 ## License
 

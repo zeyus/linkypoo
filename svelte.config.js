@@ -19,7 +19,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: ''
+			base: '' // change this if you want to deploy at a subdirectory
 		},
 		prerender: {
 			handleHttpError: 'warn',
