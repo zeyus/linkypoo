@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"gh-pages": "pnpm run build && pnpm exec gh-pages --nojekyll -d build -t"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.6",
@@ -24,6 +25,7 @@
 		"eslint": "^9.20.1",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
+		"gh-pages": "^6.3.0",
 		"globals": "^15.15.0",
 		"prettier": "^3.5.1",
 		"prettier-plugin-svelte": "^3.3.3",
@@ -33,12 +35,12 @@
 		"tailwindcss": "^4.0",
 		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.24.0",
-		"vite": "^6.1.0"
-	},
-	"dependencies": {
+		"vite": "^6.1.0",
 		"flowbite": "^3.1.2",
 		"flowbite-svelte": "^0.47.4",
-		"flowbite-svelte-icons": "^2.0.2",
-		"gh-pages": "^6.3.0"
+		"flowbite-svelte-icons": "^2.0.2"
+	},
+	"dependencies": {
+		
 	}
 }
