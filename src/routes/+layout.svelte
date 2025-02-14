@@ -5,6 +5,11 @@
 <div class="container mx-auto my-8 rounded-3xl bg-black/75 shadow-2xl p-8">
 	{@render children()}
 </div>
+<footer class="bg-neutral-950/50 text-white text-center py-8">
+	<div class="container mx-auto">
+		<p class="text-sm">© 2025 <a href="https://zeyus.com/" class="text-pink-500 underline">zeyus</a> - <a href="https://github.com/zeyus/linkypoo" class="text-pink-500 underline">Linkypoo link index</a></p>
+	</div>
+</footer>
 <div id="space" class="bg-neutral-950">
 	<div class="stars"></div>
 	<div class="stars"></div>

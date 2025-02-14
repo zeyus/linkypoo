@@ -1,38 +1,37 @@
-# sv
+# Linkypoo link index static site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This code will generate you a link index static site that can be deployed anywhere without a server, e.g. github pages.
 
-## Creating a project
+It's used to deploy to [https://me.zys.im/](https://me.zys.im/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+![screenshot](example.png)
 
-```bash
-# create a new project in the current directory
-npx sv create
+Fork it, do whatever you like with it.
 
-# create a new project in my-app
-npx sv create my-app
-```
 
-## Developing
+## Setup
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Fork this repo (otherwise you'll just be linking to my stuff)
+2. edit `src/routes/+page.ts` to add your links
+    
+    * You can add, remove categories as you like
+    * Link icons can be either the name of a [flowbite-svelte-icon](https://flowbite-svelte.com/icons/solid-icons) component, or an SVG string (remember to set `linkIconSvg: true`)
 
-```bash
-npm run dev
+3. Edit or remove `static/CNAME` (if you're deploying on github pages)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+## Development
 
 ```bash
-npm run build
+pnpm i
+pnpm dev
 ```
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+pnpm gh-pages
+```
+
+## License
+
+MIT, see [LICENSE](LICENSE)
