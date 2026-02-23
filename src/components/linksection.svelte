@@ -9,6 +9,7 @@
         sectionImage?: HTMLImgAttributes,
     } = $props();
 
+    // svelte-ignore state_referenced_locally
     if (sectionImage?.src === null) {
         sectionImage = undefined;
     }

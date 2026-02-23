@@ -11,10 +11,13 @@
     const availableIcons = Object.keys(iconComponents);
     const icons = Object.entries(iconComponents);
 
+    // svelte-ignore state_referenced_locally
     const iconIndex = "linkIcon" in link && typeof link.linkIcon !== "undefined" ? availableIcons.indexOf(link.linkIcon) : -1;
+    // svelte-ignore state_referenced_locally
     const iconSolidIndex = "linkIcon" in link && typeof link.linkIcon !== "undefined" ? availableIcons.indexOf(link.linkIcon + "Solid") : -1;
     let icon = $state<Component | null>(null);
     let iconSvg: string | null = $state(null);
+    // svelte-ignore state_referenced_locally
     if (link.linkIconSvg && link.linkIcon !== undefined) {
         iconSvg = link.linkIcon;
     } else {
@@ -29,6 +32,7 @@
 
     const iconConfig: { size: "md" | "xs" | "sm" | "lg" | "xl" | undefined, color: string, ariaLabel: string } = {
         size: "lg",
+        // svelte-ignore state_referenced_locally
         color: link.color || '#fff',
         ariaLabel: "", // @TODO
     };
