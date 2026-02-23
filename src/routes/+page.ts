@@ -1,6 +1,15 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = () => {
+    const pageMetadata: Props.PageMetadata = {
+        title: "zeyus on the internet",
+        description: "Link index for zeyus, media, social, contact, open-source projects",
+        footer: 'thanks for visiting',
+        showCopyright: true,
+        copyrightHolder: 'zeyus',
+        copyrightHolderUrl: 'https://zeyus.com/',
+        copryrightYear: new Date().getFullYear(),
+    };
     const sections: Record<string, Props.LinkSection> = {
         social: {
             title: 'Social',
@@ -162,6 +171,6 @@ export const load: PageLoad = () => {
         linkSections: sections,
         linkItems: links,
         profile,
-
+        pageMetadata,
     };
 };

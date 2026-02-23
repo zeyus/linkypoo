@@ -13,6 +13,15 @@ declare global {
 	}
 
 	namespace Props {
+		interface PageMetadata {
+			title: string;
+			description: string;
+			footer?: string;
+			showCopyright?: boolean;
+			copyrightHolder?: string;
+			copyrightHolderUrl?: string;
+			copryrightYear?: number;
+		}
 		interface Link {
 			linkText: string;
 			linkIcon?: string;
@@ -35,4 +44,4 @@ declare global {
 	}
 }
 
-export {};
+export { };

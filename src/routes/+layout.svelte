@@ -1,13 +1,28 @@
 <script lang="ts">
 	import '../app.css';
-	let { children } = $props();
+	import { page } from '$app/state';
+	let { children }: { children: any } = $props();
+	let pageMetadata = $derived(page.data.pageMetadata as Props.PageMetadata | undefined);
 </script>
 <div class="container mx-auto my-8 rounded-3xl bg-black/75 shadow-2xl p-8">
 	{@render children()}
 </div>
 <footer class="bg-neutral-950/50 text-white text-center py-8">
-	<div class="container mx-auto">
-		<p class="text-sm">© 2025 <a href="https://zeyus.com/" class="text-pink-500 underline">zeyus</a> - <a href="https://github.com/zeyus/linkypoo" class="text-pink-500 underline">Linkypoo link index</a></p>
+	<div class="container mx-auto flex flex-row items-center justify-center">
+		{#if pageMetadata?.showCopyright}
+			<p class="text-sm">&copy; {pageMetadata?.copryrightYear ?? new Date().getFullYear()}
+				{#if pageMetadata?.copyrightHolderUrl}
+					<a href={pageMetadata.copyrightHolderUrl} class="text-pink-500 underline"> {pageMetadata?.copyrightHolder ?? pageMetadata?.title}</a>
+				{:else}
+					 {pageMetadata?.copyrightHolder ?? pageMetadata?.title}
+				{/if}
+				&nbsp;&mdash;
+			</p>
+		{/if}
+		{#if pageMetadata?.footer}
+			<p class="text-sm">&nbsp;{@html pageMetadata.footer} &nbsp;&mdash;</p>
+		{/if}
+		<p class="text-sm">&nbsp;Generated with <a href="https://github.com/zeyus/linkypoo" class="text-pink-500 underline">Linkypoo</a></p>
 	</div>
 </footer>
 <div id="space" class="bg-neutral-950">
@@ -80,3 +95,8 @@
 		}
 	}
 </style>
+<svelte:head>
+	<title>{pageMetadata?.title ?? 'Linkypoo'}</title>
+	<meta name="description" content={pageMetadata?.description ?? ''} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</svelte:head>
