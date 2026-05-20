@@ -1,7 +1,6 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
-import type { Component } from "svelte";
-import type { HTMLAnchorAttributes, HTMLImgAttributes } from "svelte/elements";
+import type { HTMLAnchorAttributes, HTMLImgAttributes } from 'svelte/elements';
 
 declare global {
 	namespace App {
@@ -27,6 +26,7 @@ declare global {
 			linkIcon?: string;
 			linkIconSvg?: boolean;
 			linkAttrs: HTMLAnchorAttributes;
+			subtext?: string;
 			section?: string;
 			color?: string;
 			me?: boolean; // If true, the link will be added to a <link rel="me"> tag
@@ -44,4 +44,4 @@ declare global {
 	}
 }
 
-export { };
+export {};

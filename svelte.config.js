@@ -24,9 +24,8 @@ const config = {
 		prerender: {
 			handleHttpError: 'warn',
 			crawl: true,
-			handleMissingId: 'warn',
-
-		},
+			handleMissingId: 'warn'
+		}
 	}
 };
 

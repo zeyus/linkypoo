@@ -1,12 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-    font-family: "JuliaMono-Bold";
-    src: url("/JuliaMono-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'JuliaMono-Bold';
+	src: url('/JuliaMono-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
 }
 
 .font-jmb {
-    font-family: "JuliaMono-Bold", monospace;
+	font-family: 'JuliaMono-Bold', monospace;
 }
