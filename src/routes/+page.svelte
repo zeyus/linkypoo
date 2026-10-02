@@ -35,7 +35,7 @@
 
 <Profile {profile} />
 
-{#each orderedSections as [sectionName, section]}
+{#each orderedSections as [sectionName, section] (sectionName)}
 	{#if sectionName in links && links[sectionName].length > 0}
 		<LinkSection
 			sectionTitle={section.title}

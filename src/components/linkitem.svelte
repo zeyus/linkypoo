@@ -4,10 +4,11 @@
 	import Youtube from 'flowbite-svelte-icons/YoutubeSolid.svelte';
 	import Github from 'flowbite-svelte-icons/GithubSolid.svelte';
 	import Envelope from 'flowbite-svelte-icons/EnvelopeSolid.svelte';
+	import Globe from 'flowbite-svelte-icons/GlobeSolid.svelte';
 	import type { Component } from 'svelte';
 
 	let { link }: { link: Props.Link } = $props();
-	const iconComponents = { Youtube, Github, Envelope };
+	const iconComponents = { Youtube, Github, Envelope, Globe };
 	const availableIcons = Object.keys(iconComponents);
 	const icons = Object.entries(iconComponents);
 

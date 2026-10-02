@@ -23,9 +23,7 @@
 	<Heading tag="h2" class="font-jmb mb-8 text-center text-6xl text-pink-500">{sectionTitle}</Heading
 	>
 	{#if sectionImage}
-		{{
-			/** @ts-ignore */
-		}}
+		{{/** @ts-ignore */}}
 		<Img {...sectionImage} class="mb-4" />
 	{/if}
 	<List>
